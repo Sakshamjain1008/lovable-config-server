@@ -33,7 +33,7 @@ eureka:
     prefer-ip-address: true
     hostname: localhost
 
-jwt.secretKey: as9b7aodlbjfkluosfd789ujeklfnlsduf90b8ha908w74tuqijvlckajdl
+jwt.secret-key: as9b7aodlbjfkluosfd789ujeklfnlsduf90b8ha908w74tuqijvlckajdl
 app:
   frontend:
     url: http://localhost:8080/frontend
@@ -74,7 +74,7 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
 
-jwt.secretKey: ${JWT_SECRET}
+jwt.secret-key: ${JWT_SECRET}
 
 app:
   frontend:
