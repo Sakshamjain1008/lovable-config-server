@@ -1,13 +1,16 @@
+
 server:
   port: 9020
-  servlet.context-path: /workspace
+  servlet:
+    context-path: /workspace
 
 spring:
   datasource:
     url: jdbc:postgresql://localhost:9010/lovable-workspace-db
     username: user
-    password: password
+    password: ${DB_PASSWORD:password}
     driver-class-name: org.postgresql.Driver
+
   data:
     redis:
       host: localhost
@@ -15,8 +18,8 @@ spring:
 
 minio:
   url: http://localhost:9000
-  access-key: minioadmin
-  secret-key: minioadmin123
+  access-key: ${MINIO_ROOT_USER:minioadmin}
+  secret-key: ${MINIO_ROOT_PASSWORD}
   project-bucket: projects
 
 ---
@@ -29,6 +32,7 @@ spring:
     url: jdbc:postgresql://pgvector.lovable-core.svc.cluster.local:5432/workspace_db
     username: workspace_user
     password: ${DB_PASSWORD}
+
   data:
     redis:
       host: redis.lovable-core.svc.cluster.local
