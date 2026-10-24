@@ -1,3 +1,4 @@
+
 spring:
   jpa:
     hibernate:
@@ -21,7 +22,6 @@ spring:
       properties:
         spring.json.trusted.packages: "com.saksham.distributed_lovable.*"
 
-
 eureka:
   client:
     serviceUrl:
@@ -33,13 +33,15 @@ eureka:
     prefer-ip-address: true
     hostname: localhost
 
-jwt.secret-key: as9b7aodlbjfkluosfd789ujeklfnlsduf90b8ha908w74tuqijvlckajdl
+jwt:
+  secretKey: ${JWT_SECRET:change-this-local-only-secret}
+
 app:
   frontend:
     url: http://localhost:8080/frontend
   preview:
     domain: localhost
-    namespace: saksham-apps
+    namespace: shuttle-apps
     proxy-port: 8090
 
 management:
@@ -74,7 +76,8 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
 
-jwt.secret-key: ${JWT_SECRET}
+jwt:
+  secretKey: ${JWT_SECRET}
 
 app:
   frontend:
@@ -84,6 +87,3 @@ app:
     namespace: ${PREVIEW_NAMESPACE}
     proxy-port: ${PROXY_PORT}
 
-ACCOUNT_SERVICE_URI: http://account-service
-WORKSPACE_SERVICE_URI: http://workspace-service
-INTELLIGENCE_SERVICE_URI: http://intelligence-service
