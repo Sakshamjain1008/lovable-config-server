@@ -1,18 +1,21 @@
+
 server:
   port: 9030
-  servlet.context-path: /intelligence
+  servlet:
+    context-path: /intelligence
 
 spring:
   datasource:
     url: jdbc:postgresql://localhost:9010/lovable-intelligence-db
     username: user
-    password: password
+    password: ${DB_PASSWORD:password}
     driver-class-name: org.postgresql.Driver
 
   ai:
-    model.chat: openai
+    model:
+      chat: openai
     openai:
-      api-key: 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
+      api-key: ${AI_API_KEY}
       base-url: https://openrouter.ai/api
       chat:
         options:
@@ -33,9 +36,14 @@ spring:
     username: intelligence_user
     password: ${DB_PASSWORD}
 
-ai:
+  ai:
     openai:
       api-key: ${AI_API_KEY}
-    chat:
+      base-url: https://openrouter.ai/api
+      chat:
         options:
           model: google/gemini-3-flash-preview
+          temperature: 0.2
+      embedding:
+        options:
+          model: qwen/qwen3-embedding-8b
