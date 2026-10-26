@@ -41,7 +41,7 @@ app:
     url: http://localhost:8080/frontend
   preview:
     domain: localhost
-    namespace: shuttle-apps
+    namespace: saksham-apps
     proxy-port: 8090
 
 management:
