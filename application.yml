@@ -87,3 +87,7 @@ app:
     namespace: ${PREVIEW_NAMESPACE}
     proxy-port: ${PROXY_PORT}
 
+ACCOUNT_SERVICE_URI: http://account-service
+WORKSPACE_SERVICE_URI: http://workspace-service
+INTELLIGENCE_SERVICE_URI: http://intelligence-service
+
