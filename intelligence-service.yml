@@ -19,7 +19,7 @@ spring:
       base-url: https://openrouter.ai/api
       chat:
         options:
-          model: google/gemini-3-flash-preview
+          model: openrouter/free
           temperature: 0.2
       embedding:
         options:
@@ -42,7 +42,7 @@ spring:
       base-url: https://openrouter.ai/api
       chat:
         options:
-          model: google/gemini-3-flash-preview
+          model: openrouter/free
           temperature: 0.2
       embedding:
         options:
